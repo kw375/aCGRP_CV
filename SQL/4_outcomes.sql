@@ -67,6 +67,7 @@ into #outcome_VHA
 							inner join #Dim_ICD9_MACE as y on c.ICD9SID = y.ICD9SID
     where b.AdmitDateTime IS NOT NULL
 	  AND b.dischargedatetime IS NOT NULL
+	  AND OrdinalNumber in (1, 2, 3)
  UNION
 select a.scrssn, b.InpatientSID,
 		b.AdmitDateTime, b.dischargedatetime,
